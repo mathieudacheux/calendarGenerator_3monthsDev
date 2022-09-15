@@ -1,0 +1,137 @@
+/* GENERAL SETTINGS */
+
+:root {
+    --backgroundObject: #9E2A2B;
+    --backgroundButton: #540B0E;
+    --backgroundLight: #335C67;
+    --textTitle: #E09F3E;
+    --textParagraph: #FFF3B0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--backgroundLight);
+
+}
+
+/* FONT SETTINGS */
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--textTitle);
+}
+
+p {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--textParagraph);
+}
+
+/* HEADER SETTINGS */
+
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* MAIN */
+
+main {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* FORM SECTION */
+
+#form {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    border-radius: 10px;
+    color: var(--textParagraph);
+    background-color: var(--backgroundObject);
+}
+
+form input, form select {
+    padding: .5rem 1rem;
+    text-align: center;
+    width: 125px;
+}
+
+form select, form input {
+    margin-bottom: 1rem;
+}
+
+form label {
+    margin-bottom: .5rem;
+}
+
+button {
+    padding: .5rem 1rem;
+    color: var(--textParagraph);
+    background-color: var(--backgroundButton);
+    border: 0px;
+    border-radius: 5px;
+}
+
+/* CALENDAR */
+
+#calendar {
+    height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 90%;
+}
+
+table tr th {
+    font-size: .7rem;
+}
+
+td, .emptyTD {
+    width: 40px;
+    height: 40px;
+}
+
+td {
+    background-color: var(--backgroundObject);
+}
+
+.emptyTD {
+    background-color: var(--backgroundButton);
+}
+
+.title {
+    color: var(--textTitle);
+}
