@@ -44,28 +44,27 @@
 
             <form action="./index.php" method="get">
 
-                <!-- Input des différents mois -->
+                <!-- Input des mois -->
 
                 <label for="month">Mois :</label>
                 <select name="month" id="month" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
+                    <?php
+                        for($counterMonths = 1; $counterMonths <= 12; $counterMonths++) {
+                            echo '<option>'.$counterMonths.'</option>';
+                        }
+                    ?>
                 </select>
         
-                <!-- Input manuel des années -->
+                <!-- Input des années -->
 
                 <label for="year">Année :</label>
-                <input type="number" name="year" id="year" required>
+                <select name="year" id="year" required>
+                    <?php
+                        for($counterYear = 1970; $counterYear <= 2034; $counterYear++) {
+                            echo '<option>'.$counterYear.'</option>';
+                        }
+                    ?>
+                </select>
         
                 <!-- Button d'envoi -->
 
