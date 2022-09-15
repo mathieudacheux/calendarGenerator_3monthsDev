@@ -115,6 +115,13 @@ table {
     width: 90%;
 }
 
+caption {
+    color: var(--textTitle);
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 1.25rem;
+}
+
 table tr th {
     font-size: .7rem;
 }
