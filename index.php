@@ -26,13 +26,11 @@
     <link rel="stylesheet" href="./public/css/style.css">
     <script src="./public/js/script.js"></script>
     <title>Le calendrier</title>
-    <meta name="description" content="">
 </head>
 <body>
     <header>
         <nav>
             <h1>Le calendrier</h1>
-
         </nav>
     </header>
 
@@ -143,7 +141,7 @@
                                 echo '<td><p>'.$counterDays.'</p></td>';
                                 $counterDays++;
                             } else {
-                                echo '<td class="emptyTD"></td>';
+                                echo '<td class="emptyTD">'.$counterDays.'</td>';
                             }
                         };
                     ?>
