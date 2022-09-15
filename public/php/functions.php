@@ -38,15 +38,26 @@
     }
 
     // Fonction qui créer le tableau
-    function createTableFromInput($counter, $counterDays, $numbersOfDays, $firstDayOfMonth, $counterFuturMonths) {
-        if (isset($_GET['month']) && isset($_GET['year'])) {
-            echo '<table>';
+    function createTableFromInput($counter, $counterDays, $numbersOfDays, $firstDayOfMonth, $counterFuturMonths, $displayMonth, $year, $counterDaysBeforeMonths) {
+            echo '<table>
+                    <caption>Calendrier de '.$displayMonth.' '.$year.'</caption>
+                    <tr>
+                        <th><p class="title">Lun.</p></th>
+                        <th><p class="title">Mar.</p></th>
+                        <th><p class="title">Mer.</p></th>
+                        <th><p class="title">Jeu.</p></th>
+                        <th><p class="title">Ven.</p></th>
+                        <th><p class="title">Sam.</p></th>
+                        <th><p class="title">Dim.</p></th>
+                    </tr>';
             echo '<tr>';
+            $counterDaysBeforeMonths = $counterDaysBeforeMonths - $firstDayOfMonth + 2;
             while ($firstDayOfMonth != $counter) {
                 echo '<td class="emptyTD">
-                        <p>1</p>
+                        <p class="emptyParagraph">'.$counterDaysBeforeMonths.'</p>
                      </td>';
-                $counter++ ;
+                $counter++;
+                $counterDaysBeforeMonths++;
             }
             for ($counter; $counter <= 42; $counter++) {
                 if ($counter < 7) {
@@ -100,7 +111,10 @@
                             </td>';
                         $counterDays++;
                     } else {
-                        echo '<td class="emptyTD"><p>'.$counterFuturMonths.'</p></td></td>';
+                        echo '<td class="emptyTD">
+                                <p class="emptyParagraph">'.$counterFuturMonths.'</p>
+                            </td>
+                            </td>';
                         $counterFuturMonths ++;
                     }
                 } else if ($counter == 35) {
@@ -111,7 +125,7 @@
                         $counterDays++;
                     } else {
                         echo '<td class="emptyTD">
-                                <p>'.$counterFuturMonths.'</p>
+                                <p class="emptyParagraph">'.$counterFuturMonths.'</p>
                             </td>
                             </tr>';
                         $counterFuturMonths ++;
@@ -123,7 +137,10 @@
                             </td>';
                         $counterDays++;
                     } else {
-                        echo '<td class="emptyTD"><p>'.$counterFuturMonths.'</p></td></td>';
+                        echo '<td class="emptyTD">
+                                <p class="emptyParagraph">'.$counterFuturMonths.'</p>
+                            </td>
+                            </td>';
                         $counterFuturMonths ++;
                     }
                 } else if ($counter == 42) {
@@ -134,7 +151,7 @@
                         $counterDays++;
                     } else {
                         echo '<td class="emptyTD">
-                                <p>'.$counterFuturMonths.'</p>
+                                <p class="emptyParagraph">'.$counterFuturMonths.'</p>
                             </td>
                             </tr>';
                         $counterFuturMonths ++;
@@ -142,6 +159,5 @@
                 }
             }
             echo '</table>';
-            }
         }
 ?>

@@ -6,10 +6,19 @@
     $dateNow = new DateTime();
     $yearNow = $dateNow->format('Y');
     $monthNow = $dateNow->format('n');
-
+    $numbersOfDays = $dateNow->format('t');
+    $firstDayOfMonth = $dateNow->format('N');
+    $monthBefore = $monthNow - 1;
+    $numbersOfDaysBefore = cal_days_in_month(CAL_GREGORIAN, $monthBefore, $yearNow);
+    
     // Tableau de comparaison
     $monthsArray = array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
     $displayMonthNow = $monthsArray[$monthNow - 1];
+
+    // Compteurs
+    $counter = 1;  
+    $counterDays = 1;
+    $counterFuturMonths = 1;
 
     // Vérification si les variables du formulaire existent
     if (isset($_GET['month']) && isset($_GET['year'])) {
@@ -25,11 +34,6 @@
         $numbersOfDays = $date->format('t');
         $firstDayOfMonth = $date->format('N');
 
-        // Compteurs
-        $counter = 1;  
-        $counterDays = 1;
-        $counterFuturMonths = 1;
-        
         // Affichage des jours précédants le mois
         if ($month >= 2) {
             $monthBefore = $month - 1;
@@ -97,14 +101,15 @@
         </section>
     
         <section id="calendar">
-
         <!-- Création de Calendar si les GET sont effectuées -->
 
         <?php
-            createTableFromInput($counter, $counterDays, $numbersOfDays, $firstDayOfMonth, $counterFuturMonths)
+            if (isset($_GET['month']) && isset($_GET['year'])) {
+                createTableFromInput($counter, $counterDays, $numbersOfDays, $firstDayOfMonth, $counterFuturMonths, $displayMonth, $year, $counterDaysBeforeMonths);
+            } else {
+                createTableFromInput($counter, $counterDays, $numbersOfDays, $firstDayOfMonth, $counterFuturMonths, $displayMonthNow, $yearNow, $numbersOfDaysBefore);
+            };
         ?>
-
-
         </section>
     <script src="https://kit.fontawesome.com/d067b7d25c.js" crossorigin="anonymous"></script>
     </main>
