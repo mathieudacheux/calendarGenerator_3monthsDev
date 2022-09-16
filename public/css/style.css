@@ -75,6 +75,28 @@ main {
     justify-content: center;
 }
 
+.clickButton {
+    cursor: pointer;
+}
+
+.after {
+    margin-left: 1rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 25px 50px;
+    border-color: transparent transparent transparent var(--backgroundObject);
+}
+
+.before {
+    margin-right: 1rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 50px 25px 0;
+    border-color: transparent var(--backgroundObject) transparent transparent;
+}
+
 form {
     display: flex;
     flex-direction: column;

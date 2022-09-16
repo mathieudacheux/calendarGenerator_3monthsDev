@@ -58,51 +58,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./public/assets/icons/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./public/css/style.css">
-    <script src="./public/js/script.js"></script>
+    <script defer src="./public/js/script.js"></script>
     <title>Le calendrier</title>
 </head>
 <body>
     <header>
         <nav>
-            <h1>Le calendrier</h1>
+            <h1>Calendrier</h1>
         </nav>
     </header>
 
 
     <main>
         <section id="form">
-
-        <!-- Création du formulaire -->
-
+            <div class="before clickButton"></div>
+            <!-- Création du formulaire -->
             <form action="./index.php" method="get">
-
                 <!-- Input des mois -->
-
                 <label for="month">Mois :</label>
                 <select name="month" id="month" required>
                     <?php
                         createOptionMonths($displayMonth, $displayMonthNow, $monthsArray);
                     ?>
                 </select>
-        
                 <!-- Input des années -->
-
                 <label for="year">Année :</label>
                 <select name="year" id="year" required>
                     <?php
                         createOptionYears($year, $yearNow);
                     ?>
                 </select>
-        
-                <!-- Button d'envoi -->
-
-                <button type="submit">Envoyer</button>
             </form>
+            <div class="after clickButton"></div>
         </section>
     
         <section id="calendar">
         <!-- Création de Calendar si les GET sont effectuées -->
-
         <?php
             if (isset($_GET['month']) && isset($_GET['year'])) {
                 createTableFromInput($counter, $counterDays, $numbersOfDays, $firstDayOfMonth, $counterFuturMonths, $displayMonth, $year, $counterDaysBeforeMonths);
@@ -111,7 +102,6 @@
             };
         ?>
         </section>
-    <script src="https://kit.fontawesome.com/d067b7d25c.js" crossorigin="anonymous"></script>
     </main>
 </body>
 </html>
