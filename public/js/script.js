@@ -75,7 +75,7 @@ fetch ('public/js/birthday.json')
 })
 .then(function(data) {
     data.birthday.forEach(data => {
-        if (data.month == selectMonth.value) {
+        if (data.month == selectMonth.value && selectYear >= data.year) {
             document.querySelectorAll('.calendar').forEach(element => {
                 if (element.textContent == data.day) {
                     element.style = `background-image: url('${data.img}')`;
