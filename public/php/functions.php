@@ -62,52 +62,52 @@
             for ($counter; $counter <= 42; $counter++) {
                 if ($counter < 7) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>';
                     $counterDays++;
                 } else if ($counter == 7) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>
                         </tr>';
                     $counterDays++;
                 } else if ($counter < 14) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>';
                     $counterDays++;
                 } else if ($counter == 14) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>
                         </tr>';
                     $counterDays++;
                 } else if ($counter < 21) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>';
                     $counterDays++;
                 } else if ($counter == 21) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>
                         </tr>';
                     $counterDays++;
                 } else if ($counter < 28) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>';
                     $counterDays++;
                 } else if ($counter == 28) {
                     echo '<td>
-                            <p>'.$counterDays.'</p>
+                            <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                         </td>
                         </tr>';
                     $counterDays++;
                 } else if ($counter < 35) {
                     if ($counterDays <= $numbersOfDays) {
                         echo '<td>
-                                <p>'.$counterDays.'</p>
+                                <p class="'.$displayMonth.' calendar">'.$counterDays.'</p>
                             </td>';
                         $counterDays++;
                     } else {
