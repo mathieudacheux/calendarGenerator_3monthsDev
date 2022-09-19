@@ -198,7 +198,7 @@ td {
     transform: translate(-50%, -70%);
     font-size: 5rem;
     color: var(--birthday);
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
     background-color: var(--backgroundButton);
 }
